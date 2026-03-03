@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Mi Lista Épica de Regalos de Cumpleaños 👑</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #00d4ff;
+            --color-secondary: #ff006e;
+            --color-accent: #8338ec;
+            --color-bg: #0a0e27;
+            --color-card: #1a1f3a;
+            --color-border: #2a3050;
+            --color-text: #e0e0e0;
+            --color-text-bright: #ffffff;
+            --glow-sm: 0 0 10px var(--color-primary);
+            --glow-md: 0 0 20px var(--color-primary);
+            --glow-lg: 0 0 40px var(--color-primary);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* GRADIENTE ANIMADO DE FONDO */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                #0a0e27 0%, 
+                #1a0033 25%, 
+                #000a2e 50%, 
+                #0a0e27 75%, 
+                #1a0033 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* PARTÍCULAS DE FONDO */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, #00d4ff, rgba(0,212,255,0)),
+                radial-gradient(2px 2px at 60% 70%, #ff006e, rgba(255,0,110,0)),
+                radial-gradient(1px 1px at 50% 50%, #8338ec, rgba(131,56,236,0));
+            background-size: 200px 200px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            animation: particleShift 20s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+        }
+
+        @keyframes particleShift {
+            0% { background-position: 0 0, 40px 60px, 130px 270px; }
+            100% { background-position: 200px 200px, 240px 260px, 330px 470px; }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .hero-content {
+            z-index: 1;
+            position: relative;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 10vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: var(--color-text-bright);
+            text-shadow: 0 0 30px rgba(0,212,255,0.6), 0 0 60px rgba(131,56,236,0.4);
+            animation: textGradientShift 6s ease infinite, textBounce 2.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(0,212,255,0.5));
+        }
+
+        @keyframes textGradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes textBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero h1 span {
+            display: block;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .hero h1 span:nth-child(2) {
+            animation: slideInRight 0.8s ease-out 0.2s forwards;
+        }
+
+        .hero h1 span:nth-child(3) {
+            animation: slideInLeft 0.8s ease-out 0.4s forwards;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: var(--color-text);
+            max-width: 600px;
+            margin: 30px auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .arrow {
+            width: 30px;
+            height: 30px;
+            border-left: 3px solid var(--color-primary);
+            border-bottom: 3px solid var(--color-primary);
+            transform: rotate(-45deg);
+            animation: scrollArrow 2s ease-in-out infinite, arrowGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollArrow {
+            0%, 100% { transform: rotate(-45deg) translateY(0); opacity: 1; }
+            100% { transform: rotate(-45deg) translateY(15px); opacity: 0; }
+        }
+
+        @keyframes arrowGlow {
+            0%, 100% { box-shadow: 0 0 5px var(--color-primary); }
+            50% { box-shadow: 0 0 20px var(--color-primary), 0 0 30px var(--color-primary); }
+        }
+
+        /* SECCIONES INTERMEDIAS */
+        section {
+            min-height: auto;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CONTADOR Y BARRA DE PROGRESO */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(131,56,236,0.1));
+            border: 1px solid var(--color-border);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,212,255,0.3) 0%, transparent 70%);
+            animation: statPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes statPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+        }
+
+        .stat-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--glow-md), 0 10px 30px rgba(0,212,255,0.1);
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-primary);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--color-text);
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(0,212,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            width: 0%;
+            border-radius: 10px;
+            box-shadow: var(--glow-md);
+            animation: none;
+            transition: width 0.3s ease;
+        }
+
+        /* GRID DE REGALOS */
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gift-card {
+            background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(131,56,236,0.05));
+            border: 2px solid var(--color-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            cursor: pointer;
+            group: 1;
+        }
+
+        .gift-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gift-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--glow-lg), 0 20px 60px rgba(0,212,255,0.15);
+            transform: translateY(-15px) scale(1.02);
+        }
+
+        .gift-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,212,255,0.2), transparent);
+            transition: left 0.5s ease;
+            z-index: 2;
+        }
+
+        .gift-card:hover::before {
+            left: 100%;
+        }
+
+        .gift-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #1a1f3a, #2a3050);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0,212,255,0.1), transparent);
+            animation: imagePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes imagePulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .gift-content {
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gift-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-text-bright);
+            margin-bottom: 10px;
+        }
+
+        .gift-description {
+            font-size: 0.95rem;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            /* dejar altura variable y permitir que se ajuste */
+            max-height: 6em;
+            overflow: visible;
+            word-wrap: break-word;
+        }
+
+        .gift-button {
+            width: 100%;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-bg);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--glow-md);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gift-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: none;
+            transition: left 0.4s ease;
+        }
+
+        .gift-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--glow-lg), 0 10px 30px rgba(0,212,255,0.3);
+        }
+
+        .gift-button:hover::before {
+            left: 100%;
+        }
+
+        /* ANIMACIÓN DE CONFETI */
+        .confetti-piece {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* MENSAJE POPUP */
+        .popup-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-bg);
+            padding: 30px 50px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            z-index: 10000;
+            box-shadow: var(--glow-lg), 0 20px 60px rgba(0,0,0,0.5);
+            animation: popupAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes popupAppear {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        @keyframes popupShake {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            25% { transform: translate(-50%, -50%) rotate(-5deg); }
+            75% { transform: translate(-50%, -50%) rotate(5deg); }
+        }
+
+        .popup-message.shake {
+            animation: popupShake 0.5s ease-in-out;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.3);
+            border-top: 1px solid var(--color-border);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: var(--color-text);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .footer-emoji {
+            display: inline-block;
+            animation: floatEmoji 3s ease-in-out infinite;
+        }
+
+        @keyframes floatEmoji {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .gifts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+
+            .gift-image {
+                height: 200px;
+            }
+
+            .gift-button {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+
+            .popup-message {
+                padding: 20px 30px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 15px;
+                min-height: 100vh;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .stat-card {
+                padding: 15px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SECCIÓN HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>
+                <span>⚠️ ALERTA MUNDIAL ⚠️</span>
+                <span>SE ACERCA MI CUMPLEAÑOS 🎉</span>
+                <span>Y si no sabes qué regalarme… no entres en pánico 😌</span>
+            </h1>
+            <p class="hero-subtitle">
+                Aquí hay una lista cuidadosamente seleccionada por el comité internacional de regalos épicos 🧠
+                <br><br>
+                <strong>Desliza hacia abajo bajo tu propio riesgo 👇</strong>
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN STATS -->
+    <section id="stats">
+        <h2 class="section-title">📊 Nivel de Amistad</h2>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="friendship-level">0%</div>
+                <div class="stat-label">Barra de Amistad</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="gift-counter">0</div>
+                <div class="stat-label">Regalos Seleccionados</div>
+                <div class="progress-bar" style="margin-top: 20px;">
+                    <div class="progress-fill" style="width: 0%; animation: none;" id="gift-progress"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="karma-counter">+0</div>
+                <div class="stat-label">Karma Acumulado</div>
+                <div class="progress-bar" style="margin-top: 20px;">
+                    <div class="progress-fill" style="width: 0%; animation: none;" id="karma-progress"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN REGALOS -->
+    <section id="gifts">
+        <h2 class="section-title">🎁 La Lista Épica</h2>
+        <div class="gifts-grid" id="gifts-grid"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>🎂 Certificado por el Ministerio Internacional de Cumpleaños 🎂</p>
+        <p style="font-size: 0.9rem; Color: var(--color-primary); margin-top: 15px;">
+            Hecho con <span class="footer-emoji">❤️</span> y mucha diversión | 2026 © Cumpleaños Épico
+        </p>
+    </footer>
+
+    <script>
+        // ================================
+        // 🎮 CONFIGURACIÓN DE REGALOS
+        // ================================
+        const gifts = [
+            {
+                emoji: '🪑',
+                name: 'Silla Gamer Ergonómica',
+                description: 'Para dominar el escritorio como un verdadero campeón del gaming',
+                images: ['imagenes/silla1.webp', 'imagenes/silla2.webp']
+            },
+            {
+                emoji: '👕',
+                name: 'Polos Calvin Klein Cuello V',
+                description: 'Estilo minimalista directo de Ross Orlando',
+                images: ['imagenes/calvin1.webp', 'imagenes/calvin2.webp']
+            },
+            {
+                emoji: '🩲',
+                name: 'Ropa Interior Calvin Klein',
+                description: 'Comodidad premium talla L (porque la calidad importa)',
+                images: ['imagenes/ropainterior1.webp', 'imagenes/ropaionterior2.webp']
+            },
+            {
+                emoji: '🧦',
+                name: 'Medias Taloneras Premium',
+                description: 'Material de buen calidad que respira como debe ser',
+                images: ['imagenes/medias.jpg']
+            },
+            {
+                emoji: '🛠️',
+                name: 'Reparar Techo de Estudio',
+                description: 'El regalo más práctico: gotas de lluvia = no bueno 🌧️',
+                images: null
+            },
+            {
+                emoji: '💎',
+                name: 'Lámpara Hearthstone WoW',
+                description: 'Ilumina tu cuarto con la magia de World of Warcraft',
+                images: ['imagenes/lampara.jpg']
+            },
+            {
+                emoji: '❄️',
+                name: 'Almohadilla Llano V12',
+                description: 'Refrigeración para laptop: porque el calor es enemigo',
+                images: ['imagenes/ventilador.jpg']
+            },
+            {
+                emoji: '🔊',
+                name: 'Parlante Bluetooth JBL',
+                description: 'Sonido portátil que retumba con autoridad 🎵',
+                images: ['imagenes/parlante.webp']
+            },
+            {
+                emoji: '🎧',
+                name: 'Auriculares Inalámbricos Bluetooth',
+                description: 'Sin retaso para PC: libertad sin cordones (por ejemplo Logitech G535)',
+                images: ['imagenes/auriculares.webp']
+            },
+            {
+                emoji: '🧥',
+                name: 'Abrigo Guinda Volante Design',
+                description: 'Estilo exclusivo peruano del diseñador de moda',
+                images: ['imagenes/abrigo.png','imagenes/abrigo2.png'],
+                link: 'https://www.instagram.com/volantedesign/reels/'
+            }
+        ];
+
+        // ================================
+        // 💬 MENSAJES DIVERTIDOS
+        // ================================
+        const funnyMessages = [
+            '✨ Tu karma subió +5000',
+            '👑 Los dioses del cumpleaños sonríen',
+            '🔓 Has desbloqueado el modo mejor amigo',
+            '🌟 Increíble elección, tu buen gusto inspira',
+            '💫 Los ángeles aplaudieron esa selección',
+            '🎯 Acertaste perfectamente',
+            '⭐ Regalo de champions',
+            '🚀 Ese regalo nos envía a la estratósfera',
+            '🎉 ¡EXCELENTE SELECCIÓN!',
+            '💎 Hazlo y pasarás a la historia',
+            '🔥 ¡Fuego! Esa elección quema',
+            '🏆 Ganador confirmado',
+            '🎊 Felicidades, eres amigo de élite',
+            '💯 Perfecto en todos los aspectos',
+            '🌈 Tu amistad brilla en colores'
+        ];
+
+        // ================================
+        // 👁️ INTERSECTION OBSERVER (Animaciones en scroll)
+        // ================================
+        const observerOptions = {
+            threshold: 0,
+            rootMargin: '200px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // ================================
+        // 🎯 INICIALIZAR REGALOS
+        // ================================
+        // Estado para rastrear qué imagen de un regalo se está mostrando
+        const imageIndices = {};
+
+        function initializeGifts() {
+            const giftsGrid = document.getElementById('gifts-grid');
+            gifts.forEach((gift, index) => {
+                imageIndices[index] = 0; // Comenzar en la primera imagen
+                
+                const card = document.createElement('div');
+                card.className = 'gift-card';
+                card.style.transitionDelay = `${index * 0.1}s`;
+                
+                // Crear contenido de imagen
+                let imageHTML = '';
+                if (gift.images && gift.images.length > 0) {
+                    imageHTML = `<img src="${gift.images[0]}" alt="${gift.name}" style="width: 100%; height: 100%; object-fit: cover;">`;
+                } else {
+                    imageHTML = `<div style="display: flex; align-items: center; justify-content: center; font-size: 3rem;">${gift.emoji}</div>`;
+                }
+                
+                // Botón dinámico
+                let buttonText = 'Este será recordado en la historia 👑';
+                if (gift.images && gift.images.length > 1) {
+                    buttonText = `Ver opción ${imageIndices[index] + 1}/${gift.images.length} 🖼️`;
+                }
+                
+                // construir descripción con enlace si existe
+                let extraInfo = '';
+                if (gift.link) {
+                    extraInfo += `<br><small><a href=\"${gift.link}\" target=\"_blank\" style=\"color:var(--color-primary);\">Ver enlace</a></small>`;
+                }
+
+                card.innerHTML = `
+                    <div class="gift-image">${imageHTML}</div>
+                    <div class="gift-content">
+                        <h3 class="gift-name">${gift.name}</h3>
+                        <p class="gift-description">${gift.description}${extraInfo}</p>
+                        <button class="gift-button" data-index="${index}">${buttonText}</button>
+                    </div>
+                `;
+                giftsGrid.appendChild(card);
+                // Observar el elemento inmediatamente después de crearlo
+                observer.observe(card);
+            });
+
+            // Agregar event listeners a botones
+            document.querySelectorAll('.gift-button').forEach(button => {
+                button.addEventListener('click', (e) => handleGiftClick(e));
+            });
+
+            // Observar otros elementos
+            document.querySelectorAll('.section-title').forEach(el => observer.observe(el));
+            document.querySelectorAll('.stat-card').forEach(el => observer.observe(el));
+        }
+
+        // ================================
+        // 🎊 MANEJAR CLICK EN REGALO
+        // ================================
+        function handleGiftClick(e) {
+            const button = e.target;
+            const index = parseInt(button.dataset.index);
+            const gift = gifts[index];
+
+            // 🎉 Confeti
+            createConfetti();
+
+            // 💬 Mensaje aleatorio
+            showRandomMessage();
+
+            // ⬆️ Aumentar contadores
+            updateCounters();
+
+            // Cambiar imagen si hay múltiples
+            if (gift.images && gift.images.length > 1) {
+                // Avanzar al siguiente índice (cícico)
+                imageIndices[index] = (imageIndices[index] + 1) % gift.images.length;
+                
+                // Actualizar imagen
+                const card = button.closest('.gift-card');
+                const imageContainer = card.querySelector('.gift-image');
+                const img = imageContainer.querySelector('img');
+                
+                if (img) {
+                    img.style.opacity = '0.5';
+                    setTimeout(() => {
+                        img.src = gift.images[imageIndices[index]];
+                        img.style.opacity = '1';
+                    }, 200);
+                }
+                
+                // Actualizar texto del botón
+                button.textContent = `Ver opción ${imageIndices[index] + 1}/${gift.images.length} 🖼️`;
+            }
+
+            // Abrir enlace si existe (luego de la animación previa)
+            if (gift.link) {
+                setTimeout(() => {
+                    window.open(gift.link, '_blank');
+                }, 500);
+            }
+        }
+
+        // ================================
+        // 🎉 CREAR CONFETI
+        // ================================
+        function createConfetti() {
+            const confetti = ['🎉', '🎊', '🎁', '⭐', '✨', '💫', '🌟', '👑', '💎', '🔥'];
+            const pieces = 30;
+
+            for (let i = 0; i < pieces; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                piece.textContent = confetti[Math.floor(Math.random() * confetti.length)];
+                piece.style.left = Math.random() * 100 + 'vw';
+                piece.style.top = '-10px';
+                piece.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                piece.style.opacity = '1';
+                piece.style.zIndex = '9999';
+
+                document.body.appendChild(piece);
+
+                const duration = Math.random() * 2 + 2;
+                const angle = (Math.random() * 360) * (Math.PI / 180);
+                const velocity = Math.random() * 200 + 100;
+
+                let x = parseFloat(piece.style.left);
+                let y = 0;
+                let vx = Math.cos(angle) * velocity;
+                let vy = -Math.sin(angle) * velocity;
+                let startTime = Date.now();
+
+                function animate() {
+                    const elapsed = (Date.now() - startTime) / 1000;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    x += vx * (1 / 60);
+                    y += vy * (1 / 60);
+                    vy += 300 * (1 / 60); // Gravedad
+
+                    piece.style.left = x + 'px';
+                    piece.style.top = y + 'px';
+                    piece.style.opacity = 1 - progress;
+                    piece.style.transform = `rotate(${progress * 720}deg) scale(${1 - progress * 0.5})`;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        piece.remove();
+                    }
+                }
+
+                animate();
+            }
+        }
+
+        // ================================
+        // 💬 MOSTRAR MENSAJE ALEATORIO
+        // ================================
+        function showRandomMessage() {
+            const message = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+            const popup = document.createElement('div');
+            popup.className = 'popup-message shake';
+            popup.textContent = message;
+            document.body.appendChild(popup);
+
+            setTimeout(() => {
+                popup.style.opacity = '0';
+                popup.style.transform = 'translate(-50%, -50%) scale(0.5)';
+                popup.style.transition = 'all 0.4s ease';
+                setTimeout(() => popup.remove(), 400);
+            }, 2000);
+        }
+
+        // ================================
+        // 📊 ACTUALIZAR CONTADORES
+        // ================================
+        let giftCount = 0;
+        let karmaCount = 0;
+
+        function updateCounters() {
+            giftCount++;
+            karmaCount += 5000;
+
+            const maxGifts = gifts.length;
+            const friendshipPercent = Math.min((giftCount / maxGifts) * 100, 100);
+
+            // Actualizar elementos
+            document.getElementById('gift-counter').textContent = giftCount;
+            document.getElementById('karma-counter').textContent = '+' + karmaCount.toLocaleString();
+            document.getElementById('friendship-level').textContent = Math.round(friendshipPercent) + '%';
+
+            // Actualizar barras de progreso
+            document.getElementById('progress-fill').style.width = friendshipPercent + '%';
+            document.getElementById('gift-progress').style.width = (giftCount / maxGifts * 100) + '%';
+            document.getElementById('karma-progress').style.width = Math.min((karmaCount / 50000 * 100), 100) + '%';
+
+            // Animación pequeña de salto
+            const counter = document.getElementById('gift-counter');
+            counter.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                counter.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        // ================================
+        // 🎬 INICIAR TODO
+        // ================================
+        // Scroll al inicio al cargar la página
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+            initializeGifts();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.scrollTo(0, 0);
+        });
+
+        // Smooth scroll mejorado
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
